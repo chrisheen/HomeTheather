@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HomeTheaterApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HomeTheaterApplication.class, args); //
+		SpringApplication.run(HomeTheaterApplication.class, args);
+		//hi
 	}
 
 }
