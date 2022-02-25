@@ -7,7 +7,18 @@
 <title>공지사항 글작성 페이지야~</title>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <style type="text/css">
-/* MainContent Box ------------------------------------------ */
+/* main----------------------------------------------------------*/
+	#YM_noticeContentBody{
+		display: flex;
+		flex-direction:column;
+		background-color: DodgerBlue;
+	}
+	#YM_noticeContentBody div{
+		align-items: center;
+	}
+
+
+/* MainContent Box --------------------------------------------- */
 	#YM_board_write>div{
 		width: 1000px;
 		border:1px solid;
@@ -20,7 +31,7 @@
 		height: 430px;	
 	}
 	
-/* MainContent textarea Box ------------------------------------------ */
+/* MainContent textarea Box ------------------------------------- */
 	textarea {
         width: 100%;
         height: 100%;
@@ -38,11 +49,23 @@
 <div id="YM_noticeContentBody">
 	<main>
 		<div id="YM_siteLocation">
-			<h2>공지사항</h2>
+			<h2 id="textChange">공지사항</h2>
+			
+			<script type="text/javascript">	
+					if(${bbs.bbs_category}==2){
+						document.getElementById("textChange").innerHTML = "QnA";
+					}else{
+						document.getElementById("textChange").innerHTML = "공지사항";
+					}
+			</script>		
+				
+				
+			
 		</div>
 		<div id="YM_noticeContentBox">
 			<div id="YM_board_write">
 				<h3 class="hidden">글을 작성하는 공간입니다.</ h3>
+			
 				<!-- <form action="mainNotice"> -->
 				<form action="noticeWrite"  method="post">
 					 <input type="hidden" name="bbs_category" value="${bbs.bbs_category}">

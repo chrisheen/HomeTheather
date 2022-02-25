@@ -7,7 +7,13 @@
 <title>글작성 페이지야~</title>
 <style type="text/css">
 /* MainContent Box ------------------------------------------ */
+	#YM_MainContentsBox{
+		display: flex;
+		flex-direction:column;
+	}
+	
 	#YM_MainContentsBox>div{
+		align-items: center;
 		width: 1000px;
 		border:1px solid;
 	}
@@ -35,7 +41,16 @@
 
 	<main id="YM_NoticeContentsMainBox">
 		<div class="YM_siteLocation">
-			<h2>공지사항 or Qna</h2>
+			<h2 id="YM_noticeContentsText"></h2>
+			
+			<script type="text/javascript">	
+					if(${bbsContents.bbs_category}==2){
+						document.getElementById("YM_noticeContentsText").innerHTML = "QnA";
+					}else{
+						document.getElementById("YM_noticeContentsText").innerHTML = "공지사항";
+					}
+			</script>		
+			
 		</div>
 		
 		<div id="YM_MainContentsBox">	
@@ -52,9 +67,11 @@
 
 		<div id="YM_Mainfooter">
 			<div>
-				<button value="수정" onclick="location.href='contentsUpdateForm?bbs_no=${bbsContents.bbs_no}&bbs_category=${bbsContents.bbs_category}'">수정</button>
-				<button value="삭제" onclick="location.href='contentsDelete?bbs_no=${bbsContents.bbs_no}&bbs_category=${bbsContents.bbs_category}'">삭제</button>
 				<button onclick="location.href='mainNotice'" >목록</button>
+				<c:if test="${sessionScope.sessionId == 'admin'}">			<!-- 관리자로 로그인 했을때만 수정, 삭제 버튼 보여줌. -->
+					<button value="수정" onclick="location.href='contentsUpdateForm?bbs_no=${bbsContents.bbs_no}&bbs_category=${bbsContents.bbs_category}'">수정</button>
+					<button value="삭제" onclick="location.href='contentsDelete?bbs_no=${bbsContents.bbs_no}&bbs_category=${bbsContents.bbs_category}'">삭제</button>
+				</c:if>
 			</div>
 		</div>
 	</main>

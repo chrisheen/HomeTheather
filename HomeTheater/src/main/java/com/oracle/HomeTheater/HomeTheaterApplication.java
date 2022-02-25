@@ -8,7 +8,7 @@ public class HomeTheaterApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HomeTheaterApplication.class, args);
-		//hi
+		
 	}
 
 }
