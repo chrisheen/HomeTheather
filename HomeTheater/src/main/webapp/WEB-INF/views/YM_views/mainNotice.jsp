@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
 
-<title>공지사항페이지야~~~</title>
+<title>공지사항/QNA</title>
 
 <!--  <link href="css/notice.css?ver=1" type="text/css" rel="stylesheet" > -->
 
@@ -50,22 +50,23 @@
 	}
 			
 /* noticeMain 본문 ------------------------------------------------------ */
-		#YM_noticeMainBox{
+		.YM_mainContent{
 			display: flex;
 		  	flex-direction: column;
 			width: 100%;
 			align-items: center;
 		}
-		.YM_noticeMainBox  div{
-			justify-content: center;
-		}
-	/*-<div id="YM_MainChangeCategory">-------------------------------------*/	
-	/*----<div id="YM_MainTable">------------------------------------------*/		
-		.YM_mainContent > table { 
+	/*-YM_MainChangeCategory 카테고리버튼-------------------------------------*/	
+			.YM_MainChangeCategory{
+				margin-top:13px;
+			}
 			
+	
+	/*----Table------------------------------------------*/		
+		.YM_mainContent > table { 
 			border-collapse:collapse;
 			width:100%;
-			 }
+		 }
 		
 		th {	
 			background: #c6c6c6;
@@ -77,15 +78,15 @@
 			text-align: center;	
 			border-bottom: 1px solid #ddd;
 			} 
-	/*---<div id="YM_MainPaging">--------------------------------------*/			
+	/*---Paging-------------------------------------------------*/			
 		.YM_MainPaging {
-  			justify-content: center;
-			width: 100%;
-			height: 30px;
+			display: flex;
+			flex-direction: row;
+			margin-top: 8px;
 		}
 		
 		
-/*--------------------------------------------------------------  */
+/*--검색창 , 글쓰기 버튼------------------------------------------------------------  */
 	.YM_mainContentFooter{
 		display: flex;
 		flex-direction: row;
@@ -96,9 +97,8 @@
 	.YM_mainContentFooter  div{
 		margin: 10px;
 		text-align: center;
-	}		
-		
-		
+	}
+			
 		
 
 </style>
